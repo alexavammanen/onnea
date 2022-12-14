@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/11803_Airplane_v1_l1.obj-c02b6e61d64d88c1ac81f8c4897fad13.mesh"
+
+[deps]
+
+files=[ "res://.import/11803_Airplane_v1_l1.obj-c02b6e61d64d88c1ac81f8c4897fad13.mesh" ]
+
+source_file="res://Airplane_v1_L1.123c4a6fedec-1680-4a36-a228-b0d440a4f280/11803_Airplane_v1_l1.obj"
+dest_files=[ "res://.import/11803_Airplane_v1_l1.obj-c02b6e61d64d88c1ac81f8c4897fad13.mesh", "res://.import/11803_Airplane_v1_l1.obj-c02b6e61d64d88c1ac81f8c4897fad13.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

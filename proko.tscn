@@ -1,0 +1,122 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://eaasd.tscn" type="PackedScene" id=1]
+[ext_resource path="res://masterpiece.tscn" type="PackedScene" id=2]
+[ext_resource path="res://proko.gd" type="Script" id=3]
+[ext_resource path="res://rodus.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Airplane_v1_L1.123c4a6fedec-1680-4a36-a228-b0d440a4f280/Airplane_v1_L1.123c4a6fedec-1680-4a36-a228-b0d440a4f280/11803_Airplane_body_diff.jpg" type="Texture" id=5]
+[ext_resource path="res://ui/kanastart.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/2ndamend2050.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://ui/kuolit.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Environment" id=1]
+resource_local_to_scene = true
+background_mode = 2
+background_energy = 4.63
+ambient_light_color = Color( 0.611765, 0.427451, 0.427451, 1 )
+ambient_light_energy = 1.98
+ambient_light_sky_contribution = 0.54
+fog_sun_amount = 1.0
+fog_depth_enabled = false
+fog_depth_begin = 429.0
+fog_depth_end = 0.0
+fog_height_min = 1000.5
+tonemap_mode = 1
+tonemap_white = 10.75
+auto_exposure_scale = 1.62
+auto_exposure_min_luma = 16.0
+auto_exposure_max_luma = 0.0
+auto_exposure_speed = 49.48
+ss_reflections_fade_in = 2.66297
+ss_reflections_depth_tolerance = 128.0
+ss_reflections_roughness = false
+dof_blur_far_distance = 52.12
+dof_blur_far_transition = 1.39
+dof_blur_far_amount = 0.42
+dof_blur_far_quality = 2
+dof_blur_near_distance = 0.01
+dof_blur_near_transition = 3.42
+dof_blur_near_amount = 0.08
+dof_blur_near_quality = 2
+glow_intensity = 0.0
+glow_strength = 0.69
+glow_bloom = 0.35
+glow_blend_mode = 0
+glow_hdr_threshold = 0.5
+glow_hdr_luminance_cap = 116.84
+glow_hdr_scale = 2.53
+glow_bicubic_upscale = true
+glow_high_quality = true
+adjustment_brightness = 0.01
+adjustment_contrast = 3.96
+adjustment_saturation = 0.01
+adjustment_color_correction = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+resource_local_to_scene = true
+size = 41
+font_data = ExtResource( 7 )
+
+[sub_resource type="Theme" id=5]
+resource_local_to_scene = true
+default_font = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+resource_local_to_scene = true
+size = 41
+font_data = ExtResource( 7 )
+
+[sub_resource type="Theme" id=3]
+resource_local_to_scene = true
+default_font = SubResource( 2 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Spatial" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0986, -29.1077, -28.5413 )
+
+[node name="Spatial" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5007, 3.94878, 323.707 )
+
+[node name="Spatial" parent="Spatial/Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5007, -3.57396, 313.145 )
+
+[node name="rodus" parent="Spatial/Spatial" instance=ExtResource( 4 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0.1, 1, 0, 0, 577.997 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+process_priority = 20
+transform = Transform( 0.999962, -0.000432827, 0.00872653, 0.000432844, 1, -1.97298e-11, -0.00872653, 3.77724e-06, 0.999962, -8.2728, 30.1721, 108.228 )
+light_color = Color( 0.317647, 0.831373, 0, 1 )
+light_energy = 4.697
+light_indirect_energy = 12.841
+light_negative = true
+light_specular = 10.979
+
+[node name="masterpiece2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, -0.012, -0.104, -0.157, 0.051, 0.012, 0.002, 1, -28.338, 41.57, -57.281 )
+
+[node name="pipo" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="pipo"]
+transform = Transform( 0.999987, 0.00118284, -0.00502886, 0, 0.973435, 0.228963, 0.00516609, -0.22896, 0.973422, -23.4629, 4.35954, -53.2169 )
+cull_mask = 1047655
+environment = SubResource( 1 )
+fov = 34.7
+near = 8191.65
+far = 0.4
+
+[node name="ui3" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="kanastart2" parent="ui3" instance=ExtResource( 8 )]
+visible = false
+theme = SubResource( 5 )
+
+[node name="kanastart" parent="ui3" instance=ExtResource( 6 )]
+theme = SubResource( 3 )
+
+[connection signal="osuitko" from="masterpiece2" to="." method="_on_masterpiece2_osuitko"]
+[connection signal="kana" from="ui3/kanastart2" to="." method="_on_kanastart2_kana"]
+[connection signal="kana" from="ui3/kanastart" to="." method="_on_kanastart_kana"]

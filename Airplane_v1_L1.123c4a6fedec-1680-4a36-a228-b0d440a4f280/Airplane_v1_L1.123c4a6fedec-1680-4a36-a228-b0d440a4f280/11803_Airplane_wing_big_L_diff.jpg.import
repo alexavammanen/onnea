@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/11803_Airplane_wing_big_L_diff.jpg-0e95bb39ebd3a8209d30bcc0d6e41409.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Airplane_v1_L1.123c4a6fedec-1680-4a36-a228-b0d440a4f280/Airplane_v1_L1.123c4a6fedec-1680-4a36-a228-b0d440a4f280/11803_Airplane_wing_big_L_diff.jpg"
+dest_files=[ "res://.import/11803_Airplane_wing_big_L_diff.jpg-0e95bb39ebd3a8209d30bcc0d6e41409.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

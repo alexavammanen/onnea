@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://spatialspeciaali.tscn" type="PackedScene" id=1]
+[ext_resource path="res://aorpl.tscn" type="PackedScene" id=2]
+[ext_resource path="res://rodus.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape" id=1]
+margin = 0.001
+radius = 2.869
+height = 0.001
+
+[node name="rodus" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="MeshInstance" parent="." index="0"]
+transform = Transform( -79.6192, 0.0605043, -17.4336, -0.86843, -5.59967, -2.82833e-07, -7.74782, 0.00588772, 179.154, -7.17924, -0.794459, -0.717329 )
+
+[node name="Spatial" type="Spatial" parent="MeshInstance" index="0"]
+
+[node name="oikelevea" type="StaticBody" parent="MeshInstance/Spatial" index="0"]
+transform = Transform( 1, 7.00311e-11, -4.47035e-08, -1.31549e-08, 1, 7.45058e-09, 0, -3.63798e-12, 1, -0.00274366, 0.000425503, 0.00207381 )
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Spatial/oikelevea" index="0"]
+transform = Transform( 1, 5.88473e-05, 3.35276e-08, -5.89062e-08, 999, -2.18283e-11, -3.35276e-08, 2.18045e-08, 1, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Spatial" parent="MeshInstance/Spatial/oikelevea" index="1" instance=ExtResource( 2 )]
+transform = Transform( 0.999999, 4.89763e-10, -4.47035e-08, -4.16767e-08, 0.999999, 7.45058e-09, 3.72529e-09, -3.63798e-12, 0.999999, 0.956906, -2.08656, 0.164698 )
+
+[node name="ovaslevea2" type="StaticBody" parent="MeshInstance/Spatial" index="1"]
+transform = Transform( 1, 7.32143e-11, -1.49012e-08, -1.29221e-08, 0.999999, 3.72529e-09, 3.72529e-09, -3.63798e-12, 1, -0.00272654, 0.0257883, 0.00207644 )
+collision_layer = 3855
+collision_mask = 3855
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Spatial/ovaslevea2" index="0"]
+transform = Transform( 1, 0, 0, 0, 9999, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Spatial" parent="MeshInstance/Spatial/ovaslevea2" index="1" instance=ExtResource( 2 )]
+transform = Transform( 1, 1.77351e-11, 2.98023e-08, -1.16415e-10, 1, 0, -1.49012e-08, 0, 1, -0.00105223, -1.38465, 0.123246 )
+
+[node name="Spatial2" parent="MeshInstance" index="1" instance=ExtResource( 2 )]
+transform = Transform( 0.999999, 1.32331e-10, -4.47035e-08, -2.7474e-08, 0.999999, 7.45058e-09, 3.72529e-09, 3.63798e-12, 0.999999, -1.27699, -1.71022, 0.422249 )
